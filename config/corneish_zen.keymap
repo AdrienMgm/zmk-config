@@ -89,7 +89,7 @@
 //                      | GUI |      | SPC    |   | BKSP |     | ALT |
                         bindings = <
    &kp TAB    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6         &kp F7       &kp F8       &kp F9       &kp F10 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp C_VOL_DOWN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP &kp F11 &kp SQT
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp C_VOL_DN   &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP &kp F11 &kp SQT
    &kp LSHFT  &none        &none        &none        &none        &none          &kp C_MUTE     &kp C_PREV   &kp C_PP     &kp C_NEXT   &kp F12 &kp ESC
                                                   &kp LGUI &trans &kp SPACE      &kp BSPC &trans &kp RALT
                         >;
