@@ -53,15 +53,15 @@
                 symbol_layer {
                         label = "SYMBOL";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @   |  #  |  $  |  %  |   |  ^   |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     | HOME |  UP | END |     |   |      |  _  |  +  |  {  |  }  |  '   |
-// | SHFT |  ~  |  LFT | DWN | RGT |     |   |      |     |     | "|" |  "  | ESC  |
-//                     | GUI |     | SPC |   | BKSP |     | ALT |
+// |  TAB |  !  |  @   |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | CTRL |     | HOME |  UP | END |     |   |     |  _  |  +  |  {  |  }  |  '   |
+// | SHFT |  ~  |  LFT | DWN | RGT |     |   |     |     |     | "|" |  "  | ESC  |
+//                     | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp  TAB  &kp EXCL  &kp AT   &kp HASH &kp DLLR  &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
    &kp LCTRL &trans    &kp HOME &kp UP   &kp END   &trans      &trans    &kp UNDER &kp PLUS        &kp LBRC &kp RBRC &kp SQT
    &kp LSHFT &kp TILDE &kp LEFT &kp DOWN &kp RIGHT &trans      &trans    &trans    &trans          &kp PIPE &kp DQT  &kp ESC
-                    	      &kp LGUI &trans  &kp SPACE       &kp BSPC  &trans    &kp RALT
+                    	      &kp LGUI &trans  &kp SPACE       &kp RET   &trans    &kp RALT
                         >;
                 };
 
@@ -83,14 +83,14 @@
                 adjust_layer {
                         label = "ADJUST";
 // -----------------------------------------------------------------------------------------
-// | TAB   | F1  |  F2  | F3  | F4   | F5     |   | F6   | F7  | F8   | F9  | F10 | BKSP |
-// | BTCLR | BT1 |  BT2 | BT3 | BT4  | BT5    |   | VL-  | VL+ | BR-  | BR+ | F11 |  '   |
-// | SHFT  | XXX |  XXX | XXX | GAME | QWERTY |   | MUT  | PRV | PLAY | NXT | F12 | ESC  |
-//                      | GUI |      | SPC    |   | BKSP |     | ALT |
+// | TAB   | F1  |  F2  | F3  | F4   | F5   |   | F6   | F7  | F8   | F9  | F10 | BKSP |
+// | BTCLR | BT1 |  BT2 | BT3 | BT4  | BT5  |   | VL-  | VL+ | BR-  | BR+ | F11 |  '   |
+// | SHFT  | XXX |  XXX | XXX | XXX  | GAME |   | MUT  | PRV | PLAY | NXT | F12 | ESC  |
+//                      | GUI |      | SPC  |   | BKSP |     | ALT |
                         bindings = <
    &kp TAB    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6         &kp F7       &kp F8       &kp F9       &kp F10 &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp C_VOL_DN   &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP &kp F11 &kp SQT
-   &kp LSHFT  &none        &none        &none        &none        &none          &kp C_MUTE     &kp C_PREV   &kp C_PP     &kp C_NEXT   &kp F12 &kp ESC
+   &kp LSHFT  &none        &none        &none        &none        &to L_GAME1    &kp C_MUTE     &kp C_PREV   &kp C_PP     &kp C_NEXT   &kp F12 &kp ESC
                                                   &kp LGUI &trans &kp SPACE      &kp BSPC &trans &kp RALT
                         >;
                 };
@@ -98,25 +98,25 @@
                 game1_layer {
                         label = "GAME1";
 // -----------------------------------------------------------------------------------------
-// | ESC  |  Q  |  W  |  E  |  R   |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | TAB  |  A  |  S  |  D  |  F   |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V   |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GM2 | CTRL | SPC |   | ENT |      | ALT |
+// | ESC  |  Q  |  W  |  E  |  R   |  T  |   |  Y  |   U    |  I  |  O  |  P  | BKSP |
+// | TAB  |  A  |  S  |  D  |  F   |  G  |   |  H  |   J    |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V   |  B  |   |  N  |   M    |  ,  |  .  |  /  | ESC  |
+//                    | GM2 | CTRL | SPC |   | ENT | QWERTY | ALT |
                         bindings = <
    &kp ESC   &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U &kp I     &kp O   &kp P    &kp BSPC
    &kp TAB   &kp A &kp S &kp D &kp F &kp G           &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp ESC
-               &mo L_GAME2 &kp LCTRL &kp SPACE       &kp RET &trans &kp RALT
+               &mo L_GAME2 &kp LCTRL &kp SPACE       &kp RET &to L_DEFAULT &kp RALT
                         >;
                 };
 
                 game2_layer {
                         label = "GAME2";
 // -----------------------------------------------------------------------------------------
-// | TAB  |  1  |  2  |  3  |  4   |  5  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  6  |  7  |  8  |  9   |  0  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  <  |  >  |  ?  | CLCK |  M  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    |     | CTRL | SPC |   | ENT |      | ALT |
+// | TAB  |  1  |  2  |  3  |  4   |  5  |   |  Y  |  U  |  I  |  O  |  P  | BKSP |
+// | CTRL |  6  |  7  |  8  |  9   |  0  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
+// | SHFT |  <  |  >  |  ?  | CLCK |  M  |   |  N  |  M  |  ,  |  .  |  /  | ESC  |
+//                    |     | CTRL | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp TAB   &kp N1 &kp N2 &kp N3    &kp N4    &kp N5           &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LCTRL &kp N6 &kp N7 &kp N8    &kp N9    &kp N0           &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
